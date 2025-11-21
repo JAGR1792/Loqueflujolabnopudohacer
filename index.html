@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LO Q LOS DE FLUJO LAB TANTO LES COSTABA HACER</title>
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>RC4 - George's esquizofrenia version</h1>
+    <p>Gracias a la universidad UPM, por hacer este camino más sencillo.</p>
+
+    <section class="controls">
+      <div class="control-group">
+        <label>Vector T:
+          <input id="keyInput" type="text" value="TORTILLA" />
+        </label>
+
+        <label>Tamaño S:
+          <select id="sizeSelect">
+            <option selected>8</option>
+            <option>16</option>
+            <option>32</option>
+            <option>64</option>
+            <option>256</option>
+          </select>
+        </label>
+
+        <label>Mensaje a Cifrar:
+          <input id="msgInput" type="text" value="HOLA" />
+        </label>
+      </div>
+
+      <div class="button-group">
+        <button id="initBtn">Iniciar</button>
+        <button id="encryptBtn">Cifrar</button>
+        <button id="decryptBtn">Descifrar</button>
+      </div>
+    </section>
+
+    <section class="visual">
+      <h2>KSA (Key Scheduling Algorithm)</h2>
+      <div id="ksaInfo" class="info"></div>
+
+      <div class="tables-container">
+        <div class="table-section">
+          <h3>Vector S</h3>
+          <div class="table-wrap">
+            <table id="S-table" class="matrix"></table>
+          </div>
+        </div>
+        
+        <div class="table-section">
+          <h3>Vector T</h3>
+          <div class="table-wrap">
+            <table id="T-table" class="matrix"></table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabla iterativa KSA -->
+      <h3>Tabla de Iteraciones KSA</h3>
+      <div class="table-wrap">
+        <table id="ksaIterTable" class="matrix"></table>
+      </div>
+
+      <h2>PRGA (Pseudo-Random Generation Algorithm)</h2>
+      <div id="prgaInfo" class="info"></div>
+
+      <div class="tables-container">
+        <div class="table-section">
+          <h3>Vector S (PRGA)</h3>
+          <div class="table-wrap">
+            <table id="prga-S-table" class="matrix"></table>
+          </div>
+        </div>
+        
+        <div class="table-section">
+          <h3>Flujo de Clave</h3>
+          <div id="keystream" class="keystream"></div>
+        </div>
+      </div>
+
+      <!-- Tabla iterativa PRGA -->
+      <h3>Tabla de Iteraciones PRGA</h3>
+      <div class="table-wrap">
+        <table id="prgaIterTable" class="matrix"></table>
+      </div>
+
+      <h2>Operación XOR</h2>
+      <div id="xorTableWrap"></div>
+    </section>
+  </main>
+
+  <script src="rc4.js"></script>
+</body>
+</html>
