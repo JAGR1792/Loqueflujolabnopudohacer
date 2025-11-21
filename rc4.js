@@ -42,7 +42,7 @@
     for (let i = 0; i < size; i++) {
       const before = S.slice();
       j = (j + S[i] + T[i]) % size;
-      const displayedJ = (i !== 0) ? j : 0;
+      const displayedJ = j;
       const Si_val = before[i];
       const Ti_val = T[i];
       const Ti_chr = (Ti_val >= 32 && Ti_val <= 126) ? String.fromCharCode(Ti_val) : '';
